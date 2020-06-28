@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 class Input extends Component {
 	render() {
-		const content = this.props.success ? null : (
+		const content = this.props.success ? (
+			<div></div>
+		) : (
 			<form className='form-inline'>
 				<input
 					data-test='input-box'
