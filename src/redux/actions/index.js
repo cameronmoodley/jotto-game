@@ -1,6 +1,5 @@
-import { CORRECT_GUESS } from './actionTypes';
+import { CORRECT_GUESS, GUESS_WORD } from './actionTypes';
 
-//enf exports function name
-export const correctGuess = () => {
-	return { type: CORRECT_GUESS };
+export const guessWord = (guessedWord) => {
+	return (dispatch, getState) => {};
 };
