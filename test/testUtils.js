@@ -1,9 +1,11 @@
 import checkPropTypes from 'check-prop-types';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducer from '../src/redux/reducers/index';
+import { middleware } from '../src/redux/store';
 
 export const storeFactory = (initialState) => {
-	return createStore(reducer, initialState);
+	const createStoreWithMiddleWare = applyMiddleware(...middleware)(createStore);
+	return createStoreWithMiddleWare(reducer, initialState);
 };
 
 export const findByTestAttribute = (wrapper, value) => {
